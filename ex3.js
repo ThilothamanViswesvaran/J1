@@ -75,10 +75,13 @@ console.log(fac);
 
 console.log("Fibonacci Sequence");
 let f = 6;
-let fib = 0;
-for(i = 0; i < f; i++){
-   console.log(i);
+let f0 = [0, 1]
+let add = 0;
+for(let i = 2; i <= f; i++){
+   add = f0 [i -1] + f0 [i -2];
+   f0.push(add);
 }
+console.log(f0);
 
 // Write a program that uses nested loops to print a simple star pattern (e.g., for N = 4, the output might be):
 // *
@@ -86,6 +89,9 @@ for(i = 0; i < f; i++){
 // ***
 // ****
 
-// let symb = "*";
-// let pat = ``;
-// for(i =)
+let symb = "*";
+let k = 4;
+for(let i = 1; i <= k; i++){
+   console.log(symb);
+   symb+="*";
+}
