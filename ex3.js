@@ -47,7 +47,6 @@ let z = [10, 20, 30, 40];
 let summ = 0;
 for (let i = 0; i < z.length ; i++){
    summ+=z[i];
-   console.log('12345jhjthjjg')
 }
 console.log(summ);
 
@@ -56,9 +55,37 @@ console.log(summ);
 
 let arr = [42, 2, 3, 5, 6];
 for(let i = 0; i < arr.length ; i++){
-   y=89;
-   u=90;
    if(arr[i] % 2 === 0){
       console.log(arr[i]);
    }
 }
+
+//Write a program that computes the factorial of a given number N (e.g., 5! = 120) using a loop.
+
+console.log("Factorial of given number");
+
+let l = 5;
+let fac = 1;
+for(let i = 1; i <= l; i++){
+   fac *= i
+}
+console.log(fac);
+
+//Write a program that prints the first N terms of the Fibonacci sequence (e.g., for N = 6, output 0, 1, 1, 2, 3, 5).
+
+console.log("Fibonacci Sequence");
+let f = 6;
+let fib = 0;
+for(i = 0; i < f; i++){
+   console.log(i);
+}
+
+// Write a program that uses nested loops to print a simple star pattern (e.g., for N = 4, the output might be):
+// *
+// **
+// ***
+// ****
+
+// let symb = "*";
+// let pat = ``;
+// for(i =)
