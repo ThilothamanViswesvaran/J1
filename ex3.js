@@ -34,11 +34,31 @@ for (let s = B; s >= 1; s -= 1){
 
 //Write a program that takes a string (e.g., "hello") and uses a loop to reverse it (e.g., "olleh").
 
-let c = `hello`;
-let b = ``;
-for(let d = c.length; d >= 0 ; d-=1){
-   console.log(c[d]);
+let c = `hello world!`;
+let rev = ``;
+for(let d = c.length-1; d >= 0 ; d--){
+   rev+=c[d];
 }
+console.log(rev);
 
 //Write a program that loops through an array of numbers (e.g., [10, 20, 30, 40]) and calculates the total sum of all elements.
 
+let z = [10, 20, 30, 40];
+let summ = 0;
+for (let i = 0; i < z.length ; i++){
+   summ+=z[i];
+   console.log('12345jhjthjjg')
+}
+console.log(summ);
+
+
+//Write a program that loops through an array of numbers (e.g., [1, 2, 3, 4, 5, 6]) and prints only the even numbers.
+
+let arr = [42, 2, 3, 5, 6];
+for(let i = 0; i < arr.length ; i++){
+   y=89;
+   u=90;
+   if(arr[i] % 2 === 0){
+      console.log(arr[i]);
+   }
+}
