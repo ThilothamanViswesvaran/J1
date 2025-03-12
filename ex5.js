@@ -312,3 +312,19 @@ for (let i = 0; i < numRows; i++) {
     }
     console.log(rowContent);
 }
+
+// console.log("Pascal’s Triangle");
+
+// let numRows = 15; 
+// for (let i = 0; i < numRows; i++) {
+//     let rowContent = "\t";
+//     let num = 1; 
+//     for (let j = 0; j < numRows - i - 1; j++) {
+//         rowContent = rowContent + "\t";
+//     }
+//     for (let k = 0; k <= i; k++) {
+//         rowContent = rowContent + num + "\t\t"; 
+//         num = num * (i - k) / (k + 1);
+//     }
+//     console.log(rowContent);
+// }
