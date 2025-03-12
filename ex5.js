@@ -275,17 +275,17 @@
 // 7 8 9 10
 // 11 12 13 14 15
 
-count = 5;
-rowcontent = "";
-rc = 1;
-for(i = 1; i <= count; i++){
-  rowcontent = "";
-  for(j = 1; j <= i; j++){
-    rowcontent = rowcontent + rc + " ";
-    rc++;
-  }
-  console.log(rowcontent);
-}
+// count = 5;
+// rowcontent = "";
+// rc = 1;
+// for(i = 1; i <= count; i++){
+//   rowcontent = "";
+//   for(j = 1; j <= i; j++){
+//     rowcontent = rowcontent + rc + " ";
+//     rc++;
+//   }
+//   console.log(rowcontent);
+// }
 
 // Pascal’s Triangle
 
@@ -297,21 +297,21 @@ for(i = 1; i <= count; i++){
   //  1 3 3 1
   // 1 4 6 4 1
 
-console.log("Pascal’s Triangle");
+// console.log("Pascal’s Triangle");
 
-let numRows = 5; 
-for (let i = 0; i < numRows; i++) {
-    let rowContent = "";
-    let num = 1; 
-    for (let j = 0; j < numRows - i - 1; j++) {
-        rowContent = rowContent + " ";
-    }
-    for (let k = 0; k <= i; k++) {
-        rowContent = rowContent + num + " "; 
-        num = num * (i - k) / (k + 1);
-    }
-    console.log(rowContent);
-}
+// let numRows = 5; 
+// for (let i = 0; i < numRows; i++) {
+//     let rowContent = "";
+//     let num = 1; 
+//     for (let j = 0; j < numRows - i - 1; j++) {
+//         rowContent = rowContent + " ";
+//     }
+//     for (let k = 0; k <= i; k++) {
+//         rowContent = rowContent + num + " "; 
+//         num = num * (i - k) / (k + 1);
+//     }
+//     console.log(rowContent);
+// }
 
 // console.log("Pascal’s Triangle");
 
@@ -328,3 +328,38 @@ for (let i = 0; i < numRows; i++) {
 //     }
 //     console.log(rowContent);
 // }
+
+// Hourglass
+
+// 1 2 3 4 5  
+//  1 2 3 4  
+//   1 2 3  
+//    1 2  
+//     1  
+//    1 2  
+//   1 2 3  
+//  1 2 3 4  
+// 1 2 3 4 5  
+
+let count = 5;
+for(l = 1; l <= count; l++){
+  rowContent = "";
+  for(o = 0; o <= l - 2; o++){
+    rowContent = rowContent + " ";
+  }
+  for(p =1; p <= count - l + 1; p++){
+    rowContent = rowContent + l + " ";
+  }
+  console.log(rowContent);
+}
+for(i = 1; i <= count; i++){
+  rowContent = "";
+  for(j = 0; j <= count - i - 1; j++){
+    rowContent = rowContent + " ";
+  }
+  for(k = 1; k <= i; k++){
+    rowContent = rowContent + i + " ";
+  }
+  console.log(rowContent);
+}
+ 
