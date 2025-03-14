@@ -93,7 +93,7 @@
 //     else{
 //       rowContent = rowContent + symb +symb;
 //     }
-    
+
 //   }
 // console.log(rowContent);
 // }
@@ -115,7 +115,7 @@
 //     // else{
 //       // rowContent = rowContent + symb +symb;
 //     // }
-    
+
 //   }
 // console.log(rowContent);
 // }
@@ -199,7 +199,7 @@
 //       index = index + gap + gap + gap;
 //     }
 //   }
-  
+
 //   console.log(index);
 // }
 
@@ -291,11 +291,11 @@
 
 // Prompt: Given an integer N, print the first N rows of Pascal’s Triangle. Each number is the sum of the two numbers directly above it.
 // Example (for N = 5):
-  //     1
-  //    1 1
-  //   1 2 1
-  //  1 3 3 1
-  // 1 4 6 4 1
+//     1
+//    1 1
+//   1 2 1
+//  1 3 3 1
+// 1 4 6 4 1
 
 // console.log("Pascal’s Triangle");
 
@@ -341,25 +341,72 @@
 //  1 2 3 4  
 // 1 2 3 4 5  
 
-let count = 5;
-for(l = 1; l <= count; l++){
-  rowContent = "";
-  for(o = 0; o <= l - 2; o++){
-    rowContent = rowContent + " ";
-  }
-  for(p =1; p <= count - l + 1; p++){
-    rowContent = rowContent + l + " ";
-  }
-  console.log(rowContent);
-}
-for(i = 1; i <= count; i++){
-  rowContent = "";
-  for(j = 0; j <= count - i - 1; j++){
-    rowContent = rowContent + " ";
-  }
-  for(k = 1; k <= i; k++){
-    rowContent = rowContent + i + " ";
-  }
-  console.log(rowContent);
-}
- 
+// let count = 5;
+// for(l = 1; l <= count; l++){
+//   rowContent = "";
+//   for(o = 0; o <= l - 2; o++){
+//     rowContent = rowContent + " ";
+//   }
+//   for(p =1; p <= count - l + 1; p++){
+//     rowContent = rowContent + l + " ";
+//   }
+//   console.log(rowContent);
+// }
+// for(i = 1; i <= count; i++){
+//   rowContent = "";
+//   for(j = 0; j <= count - i - 1; j++){
+//     rowContent = rowContent + " ";
+//   }
+//   for(k = 1; k <= i; k++){
+//     rowContent = rowContent + i + " ";
+//   }
+//   console.log(rowContent);
+// }
+
+// *       *       *  
+//  *   *    *   *    
+//    *        *  
+
+// count = 4;
+// symb = "*";
+// rowContent = "";
+// for (l = 1; l <= count; l++) {
+//   rowContent = "";
+//   for (o = 0; o <= l - 2; o++) {
+//     rowContent = rowContent + " ";
+//   }
+//   for (p = 1; p <= count; p++) {
+//     if (p === 1) {
+//       rowContent = rowContent + symb + ""
+//     }
+//     // else if( p === l){
+//     //   rowContent = rowContent + ""
+//     // }
+//     else if (p === count) {
+//       rowContent = rowContent + symb + ""
+//     }
+//     for (i = l; i <= count - 1; i++) {
+//       rowContent = rowContent + " ";
+//       console.log("this is i")
+//     }
+//   }
+
+//   console.log(rowContent);
+// }
+
+// count = 5;
+// symb = "*";
+// save = "";
+// for(row = 0; row < count/2; row++){
+//   save = " ";
+//   for(column = 0; column < count; column++){
+//     if(row === column || column === (count - row - 1)){
+//       save = save + "*"
+//     }
+//     else{
+//       save = save + " "
+//     }
+//   }
+//   console.log(save)
+// }
+

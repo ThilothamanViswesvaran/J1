@@ -97,3 +97,6 @@ for(let i = 0; i < c; i++, x+="*"){
     console.log(x);
     
 }
+
+
+      
