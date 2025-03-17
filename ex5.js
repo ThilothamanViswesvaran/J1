@@ -22,6 +22,25 @@ function rightAlignedTriangle(size) {
 
 rightAlignedTriangle(5);
 
+function innerLoop(i, size) {
+  let save = "";
+  for (let j = 0; j < size; j++) {
+    save += (j < size - i) ? " " : "*";
+  }
+  return save;
+}
+
+function rightAlignedTriangle(size) {
+  console.log(`Right-Aligned Triangle size - ${size}`);
+
+  for (let i = 0; i < size; i++) {
+    let result = innerLoop(i, size);  
+    console.log(result);
+  }
+}
+
+rightAlignedTriangle(5);
+
 
 // // Left-Aligned Triangle
 
@@ -189,6 +208,8 @@ function hollowSquare(count) {
     console.log(index);
   }
 }
+
+hollowSquare(5)
 
 
 function mul() {
@@ -380,3 +401,30 @@ function zigzag(count) {
 }
 
 zigzag(5)
+
+
+function addone(number){
+  console.log("Add One");
+  return number + 1;
+}
+
+let r = addone(5)
+console.log(r);
+
+
+function addtwo(number){
+  console.log("Add Two");
+  return number + 2;
+}
+
+let b = addtwo(8)
+console.log(b);
+
+
+function addthree(number){
+  console.log("Add Three");
+  return number + 3;
+}
+
+let a = addthree(5)
+console.log(a);
