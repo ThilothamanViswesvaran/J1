@@ -8,21 +8,20 @@
 // //  ****
 // // *****
 
-// console.log("Right-Aligned Triangle");
-// rowContent = "";
-// gap = " ";
-// symb = "*"
-// count = 6;
-// for(let i = 0; i < count; i++) {
-//   rowContent = "";
-//   for(let j = 0; j < count - i; j++) {
-//     rowContent = rowContent + gap;
-//   }
-//   for(let k = 0; k < i; k++){
-//     rowContent = rowContent + symb;
-//   }
-// console.log(rowContent);
-// }
+function rightAlignedTriangle(size) {
+  console.log(`Right-Aligned Triangle size - ${size}`);
+  save = "";
+  for (i = 0; i < size; i++) {
+    let save = "";
+    for (j = 0; j <= size; j++) {
+      save += (j < size - i) ? " " : "*";
+    }
+    console.log(save);
+  }
+}
+
+rightAlignedTriangle(5);
+
 
 // // Left-Aligned Triangle
 
@@ -33,17 +32,20 @@
 // // ***
 // // ****
 
-// console.log("Left-Aligned Triangle");
-// rowContent = "";
-// symb = "*"
-// count = 5;
-// for(let i = 0; i < count; i++) {
-//   rowContent = "";
-//   for(let j = 0; j < i; j++) {
-//     rowContent = rowContent + symb;
-//   }
-// console.log(rowContent);
-// }
+function leftAlignedTriangle(count) {
+  console.log(`Left-Aligned Triangle - ${count}`);
+  rowContent = "";
+  symb = "*"
+  for (let i = 0; i < count; i++) {
+    rowContent = "";
+    for (let j = 0; j <= i; j++) {
+      rowContent = rowContent + symb;
+    }
+    console.log(rowContent);
+  }
+}
+
+leftAlignedTriangle(5)
 
 // // Inverted Triangle
 
@@ -54,17 +56,22 @@
 // // **
 // // *
 
-// console.log("Inverted Triangle");
-// rowContent = "";
-// symb = "*"
-// count = 5;
-// for(let i = 0; i <= count; i++) {
-//   rowContent = "";
-//   for(let j = 1; j <= count - i; j++) {
-//     rowContent = rowContent + symb;
-//   }
-// console.log(rowContent);
-// }
+function invertedTriangle(size) {
+  console.log(`Inverted Triangle - ${size}`);
+  rowContent = "";
+  symb = "*"
+  count = 5;
+  for (let i = 0; i <= count; i++) {
+    rowContent = "";
+    for (let j = 1; j <= count - i; j++) {
+      rowContent = rowContent + symb;
+    }
+    console.log(rowContent);
+  }
+}
+
+invertedTriangle(5)
+
 
 // // Pyramid
 
@@ -76,49 +83,27 @@
 // //  *******
 // // *********
 
-// console.log("Pyramid");
-// rowContent = "";
-// gap = " ";
-// symb = "*"
-// count = 5;
-// for(let i = 1; i < count; i++) {
-//   rowContent = "";
-//   for(let j = 0; j < count - i; j++) {
-//     rowContent = rowContent + gap ;
-//   }
-//   for(let k = 1; k <= i; k++){
-//     if(k === 1){
-//       rowContent = rowContent + symb;
-//     }
-//     else{
-//       rowContent = rowContent + symb +symb;
-//     }
+function pyramid(size) {
+  console.log(`Pyramid - ${size}`)
+  count = 5;
+  save = "";
+  symb = "*";
+  for (let i = 0; i < count; i++) {
+    let save = "";
 
-//   }
-// console.log(rowContent);
-// }
+    for (let j = 0; j < count + i; j++) {
+      if (j < count - i - 1) {
+        save = save + " ";
+      } else {
+        save = save + symb;
+      }
+    }
 
-// console.log("Pyramid");
-// rowContent = "";
-// gap = " ";
-// symb = "*"
-// count = 5;
-// for(let i = 0; i < count; i++) {
-//   rowContent = "";
-//   for(let j = 0; j < count - 1 - i; j++) {
-//     rowContent = rowContent + gap ;
-//   }
-//   for(let k = 1; k <= i*2 + 1; k++){
-//     // if(k === 1){
-//       rowContent = rowContent + symb;
-//     // }
-//     // else{
-//       // rowContent = rowContent + symb +symb;
-//     // }
+    console.log(save);
+  }
+}
 
-//   }
-// console.log(rowContent);
-// }
+pyramid(5)
 
 // Diamond
 
@@ -130,41 +115,44 @@
 //  ***
 //   *
 
-// console.log("Diamond");
-// rowContent = "";
-// gap = "-";
-// symb = "*"
-// count = 5;
-// for(let i = 1; i <= count; i++) {
-//   rowContent = "";
-//   for(let j = 0; j <= count - i; j++) {
-//     rowContent = rowContent + gap ;
-//   }
-//   for(let k = 1; k <= i; k++){
-//     if(k === 1){
-//       rowContent = rowContent + symb;
-//     }
-//     else{
-//       rowContent = rowContent + symb +symb;
-//     }
-//   }
-//   console.log(rowContent);
-// }
-// for(let i = 1; i <= count; i++) {
-//   rowContent = "";
-//   for(let j = 0; j <= i; j++) {
-//     rowContent = rowContent + gap ;
-//   }
-//   for(let k = 1; k <= count - i; k++){
-//     if(k === 1){
-//       rowContent = rowContent + symb;
-//     }
-//     else{
-//       rowContent = rowContent + symb + symb;
-//     }
-//   }
-//   console.log(rowContent);
-// }
+function diamond(count) {
+  console.log(`Diamond - ${count}`);
+  rowContent = "";
+  gap = " ";
+  symb = "*"
+  for (let i = 1; i <= count; i++) {
+    rowContent = "";
+    for (let j = 0; j <= count - i; j++) {
+      rowContent = rowContent + gap;
+    }
+    for (let k = 1; k <= i; k++) {
+      if (k === 1) {
+        rowContent = rowContent + symb;
+      }
+      else {
+        rowContent = rowContent + symb + symb;
+      }
+    }
+    console.log(rowContent);
+  }
+  for (let i = 1; i <= count; i++) {
+    rowContent = "";
+    for (let j = 0; j <= i; j++) {
+      rowContent = rowContent + gap;
+    }
+    for (let k = 1; k <= count - i; k++) {
+      if (k === 1) {
+        rowContent = rowContent + symb;
+      }
+      else {
+        rowContent = rowContent + symb + symb;
+      }
+    }
+    console.log(rowContent);
+  }
+}
+
+diamond(5)
 
 
 // Hollow Square
@@ -177,44 +165,46 @@
 // *   *
 // *****
 
-// console.log("Hollow Square");
-// gap = " ";
-// count = 5;
-// let index = "";
+function hollowSquare(count) {
+  console.log(`Hollow Square - ${count}`);
+  gap = " ";
+  let index = "";
+  for (let i = 1; i <= count; i++) {
+    index = "";
+    for (let j = 1; j <= count; j++) {
+      if (i === 1 || i === count) {
+        index += (`${i},${j}`);;
+      }
+      else if (j === 1) {
+        index += (`${i},${j}`);;
+      }
+      else if (j === count) {
+        // console.log("J Value", j)
+        index += (`${i},${j}`);;
+      }
+      else if (j != 1 || j != count || j < count) {
+        index = index + gap + gap + gap;
+      }
+    }
+    console.log(index);
+  }
+}
 
-// for(let i = 1; i <= count; i++){
-//   index = "";
-//   for(let j = 1; j <= count; j++) {
-//     if(i === 1 || i === count){
-//       index += (`${i},${j}`);;
-//     }
-//     else if(j === 1){
-//       index += (`${i},${j}`);;
-//     }
-//     else if(j === count){
-//       // console.log("J Value", j)
-//       index += (`${i},${j}`);;
-//     }
-//     else if(j != 1 || j != count || j < count){
-//       index = index + gap + gap + gap;
-//     }
-//   }
 
-//   console.log(index);
-// }
+function mul() {
+  console.log("Mul");
+  for (let y = 2; y <= 7; y++) {
+    console.log("-----------------------------");
+    console.log(`Table ${y}`)
+    console.log("-----------------------------");
+    for (let i = 1; i <= 10; i++) {
 
+      console.log(`${i} x ${y} = ${i * y}`);
+    }
+  }
+}
 
-// console.log("Mul");
-// for(let y = 2; y <= 7; y++){
-//   console.log("-----------------------------");
-//   console.log(`Table ${y}`)
-//   console.log("-----------------------------");
-//   for(let i = 1; i <= 10; i++){
-
-//     console.log(`${i} x ${y} = ${i *y}`);
-// }
-// }
-
+mul()
 
 // Checkerboard Pattern
 
@@ -225,24 +215,26 @@
 // *#*#
 // #*#*
 
+function checkerBoard(count) {
+  console.log(`Checkerboard Pattern - ${count}`)
+  let symb = "*";
+  let symb1 = "#";
+  let str = "";
 
-// let count = 4;
-// let symb = "*";
-// let symb1 = "#";
-// let str = "";
+  for (let i = 1; i <= count; i++) {
+    str = "";
+    for (let j = 1; j <= count; j++) {
+      if ((i + j) % 2 === 0) {
+        str += symb;
+      } else {
+        str += symb1;
+      }
+    }
+    console.log(str);
+  }
+}
 
-// for (let i = 1; i <= count; i++) {
-//   str = "";
-//   for (let j = 1; j <= count; j++) {
-//     if ((i + j) % 2 === 0) {
-//       str += symb;
-//     } else {
-//       str += symb1;
-//     }
-//   }
-//   console.log(str); 
-// }
-
+checkerBoard(4)
 
 // Numeric Triangle (1, 2, 3...)
 
@@ -254,16 +246,19 @@
 // 1234
 // 12345
 
-// count = 5;
-// rowcontent = "";
-// for(i = 1; i <= count; i++){
-//   rowcontent = "";
-//   for(j = 1; j <= i; j++){
-//     rowcontent = rowcontent + j;
-//   }
-//   console.log(rowcontent);
-// }
+function leftAlignedNumericTriangle(count) {
+  console.log(`Left Aligned Numeric Triangle - ${count}`)
+  rowcontent = "";
+  for (i = 1; i <= count; i++) {
+    rowcontent = "";
+    for (j = 1; j <= i; j++) {
+      rowcontent = rowcontent + j;
+    }
+    console.log(rowcontent);
+  }
+}
 
+leftAlignedNumericTriangle(5)
 
 // Floyd’s Triangle
 
@@ -275,17 +270,22 @@
 // 7 8 9 10
 // 11 12 13 14 15
 
-// count = 5;
-// rowcontent = "";
-// rc = 1;
-// for(i = 1; i <= count; i++){
-//   rowcontent = "";
-//   for(j = 1; j <= i; j++){
-//     rowcontent = rowcontent + rc + " ";
-//     rc++;
-//   }
-//   console.log(rowcontent);
-// }
+function floydsTriangle(count) {
+  console.log(`Floyd's Triangle - ${count}`)
+  rowcontent = "";
+  rc = 1;
+  for (i = 1; i <= count; i++) {
+    rowcontent = "";
+    for (j = 1; j <= i; j++) {
+      rowcontent = rowcontent + rc + " ";
+      rc++;
+    }
+    console.log(rowcontent);
+  }
+}
+
+floydsTriangle(5)
+
 
 // Pascal’s Triangle
 
@@ -297,116 +297,86 @@
 //  1 3 3 1
 // 1 4 6 4 1
 
-// console.log("Pascal’s Triangle");
+function pascalsTriangle(numRows) {
 
-// let numRows = 5; 
-// for (let i = 0; i < numRows; i++) {
-//     let rowContent = "";
-//     let num = 1; 
-//     for (let j = 0; j < numRows - i - 1; j++) {
-//         rowContent = rowContent + " ";
-//     }
-//     for (let k = 0; k <= i; k++) {
-//         rowContent = rowContent + num + " "; 
-//         num = num * (i - k) / (k + 1);
-//     }
-//     console.log(rowContent);
-// }
+  console.log(`Pascal’s Triangle - ${numRows}`);
+  for (let i = 0; i < numRows; i++) {
+    let rowContent = "";
+    let num = 1;
+    for (let j = 0; j < numRows - i - 1; j++) {
+      rowContent = rowContent + " "; //add "\t" when count is more than 1 digit instead of gap
+    }
+    for (let k = 0; k <= i; k++) {
+      rowContent = rowContent + num + " "; //add "\t" when count is more than 1 digit instead of gap
+      num = num * (i - k) / (k + 1);
+    }
+    console.log(rowContent);
+  }
+}
 
-// console.log("Pascal’s Triangle");
-
-// let numRows = 15; 
-// for (let i = 0; i < numRows; i++) {
-//     let rowContent = "\t";
-//     let num = 1; 
-//     for (let j = 0; j < numRows - i - 1; j++) {
-//         rowContent = rowContent + "\t";
-//     }
-//     for (let k = 0; k <= i; k++) {
-//         rowContent = rowContent + num + "\t\t"; 
-//         num = num * (i - k) / (k + 1);
-//     }
-//     console.log(rowContent);
-// }
+pascalsTriangle(5)
 
 // Hourglass
 
-// 1 2 3 4 5  
-//  1 2 3 4  
-//   1 2 3  
-//    1 2  
-//     1  
-//    1 2  
-//   1 2 3  
-//  1 2 3 4  
-// 1 2 3 4 5  
+// 1 1 1 1 1
+//  2 2 2 2
+//   3 3 3
+//    4 4
+//     5
+//     1
+//    2 2
+//   3 3 3
+//  4 4 4 4
+// 5 5 5 5 5/
 
-// let count = 5;
-// for(l = 1; l <= count; l++){
-//   rowContent = "";
-//   for(o = 0; o <= l - 2; o++){
-//     rowContent = rowContent + " ";
-//   }
-//   for(p =1; p <= count - l + 1; p++){
-//     rowContent = rowContent + l + " ";
-//   }
-//   console.log(rowContent);
-// }
-// for(i = 1; i <= count; i++){
-//   rowContent = "";
-//   for(j = 0; j <= count - i - 1; j++){
-//     rowContent = rowContent + " ";
-//   }
-//   for(k = 1; k <= i; k++){
-//     rowContent = rowContent + i + " ";
-//   }
-//   console.log(rowContent);
-// }
+function hourGlass(count) {
+  console.log(`Hour Glass - ${count}`)
+  for (l = 1; l <= count; l++) {
+    rowContent = "";
+    for (o = 0; o <= l - 2; o++) {
+      rowContent = rowContent + " ";
+    }
+    for (p = 1; p <= count - l + 1; p++) {
+      rowContent = rowContent + l + " ";
+    }
+    console.log(rowContent);
+  }
+  for (i = 1; i <= count; i++) {
+    rowContent = "";
+    for (j = 0; j <= count - i - 1; j++) {
+      rowContent = rowContent + " ";
+    }
+    for (k = 1; k <= i; k++) {
+      rowContent = rowContent + i + " ";
+    }
+    console.log(rowContent);
+  }
 
-// *       *       *  
-//  *   *    *   *    
-//    *        *  
+}
 
-// count = 4;
-// symb = "*";
-// rowContent = "";
-// for (l = 1; l <= count; l++) {
-//   rowContent = "";
-//   for (o = 0; o <= l - 2; o++) {
-//     rowContent = rowContent + " ";
-//   }
-//   for (p = 1; p <= count; p++) {
-//     if (p === 1) {
-//       rowContent = rowContent + symb + ""
-//     }
-//     // else if( p === l){
-//     //   rowContent = rowContent + ""
-//     // }
-//     else if (p === count) {
-//       rowContent = rowContent + symb + ""
-//     }
-//     for (i = l; i <= count - 1; i++) {
-//       rowContent = rowContent + " ";
-//       console.log("this is i")
-//     }
-//   }
+hourGlass(5)
 
-//   console.log(rowContent);
-// }
+// *       *       *
+//  *   *    *   *
+//    *        *
 
-// count = 5;
-// symb = "*";
-// save = "";
-// for(row = 0; row < count/2; row++){
-//   save = " ";
-//   for(column = 0; column < count; column++){
-//     if(row === column || column === (count - row - 1)){
-//       save = save + "*"
-//     }
-//     else{
-//       save = save + " "
-//     }
-//   }
-//   console.log(save)
-// }
+function zigzag(count) {
+  console.log(`Zig Zag ${count}`)
+  symb = "*";
+  save = "";
+  for (row = 0; row < count / 2; row++) {
+    save = " ";
+    for (column = 0; column < count; column++) {
+      if (row === column || column === (count - row - 1)) {
+        save = save + "*"
+      }
+      else {
+        save = save + " "
+      }
+    }
+    console.log(save)
+  }
 
+}
+
+zigzag(5)
