@@ -1,4 +1,4 @@
-function diamond2(gapCount, starCount){
+function generateGapsAndStar(gapCount, starCount){
     let rowContent = "";
     let symb1 = " ";
     let symb2 = "*";
@@ -11,7 +11,7 @@ function diamond2(gapCount, starCount){
     console.log(rowContent)
 }
 
-function diamond3(rowNumber, diamondSize){
+function generateRowsAndStars(rowNumber, diamondSize){
     let gapCount = ((rowNumber - diamondSize)+ 1);
     if(gapCount > 0){
         gapCount = gapCount
@@ -29,16 +29,16 @@ function diamond3(rowNumber, diamondSize){
         let result3 = (result1 * 2);
         starCount = result2 - result3;
     }
-    let save = diamond2(gapCount, starCount);
+    let save = generateGapsAndStar(gapCount, starCount);
     // console.log(gapCount, starCount);
 }
 
-// diamond3(9,7)
-// diamond3(5,7)
-// diamond3(1,7)
-// diamond3(7,7)
+// generateRowsAndStars(9,7)
+// generateRowsAndStars(5,7)
+// generateRowsAndStars(1,7)
+// generateRowsAndStars(7,7)
 
 let diamondSize = 5;
 for(let i = 0; i <= diamondSize * 2; i++){
-    let save = diamond3(i,diamondSize)
+    let save = generateRowsAndStars(i,diamondSize)
 }
