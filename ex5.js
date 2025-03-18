@@ -397,7 +397,6 @@ function zigzag(count) {
     }
     console.log(save)
   }
-
 }
 
 zigzag(5)

@@ -1,6 +1,6 @@
 //separating loops using functions
 
-function star1(rowNumber, rowSize) {
+function rightAlignedTriangleStar(rowNumber, rowSize) {
     let save = "";
     for (let j = 0; j < rowSize; j++) {
         save += (j < rowSize - rowNumber - 1) ? " " : "*";
@@ -12,14 +12,12 @@ function rightAlignedTriangle(size) {
     console.log(`Right-Aligned Triangle size - ${size}`);
 
     for (let i = 0; i < size; i++) {
-        let result = star1(i, size);
+        let result = rightAlignedTriangleStar(i, size);
         console.log(result);
     }
 }
 
-rightAlignedTriangle(5);
-
-function star2(rowNumber, rowSize) {
+function invertedTriangleStar(rowNumber, rowSize) {
     rowContent = "";
     symb = "*";
     for (let j = 1; j <= rowSize - rowNumber; j++) {
@@ -31,14 +29,12 @@ function star2(rowNumber, rowSize) {
 function invertedTriangle(rowSize) {
     console.log(`Inverted Triangle - ${rowSize}`);
     for (let i = 0; i <= rowSize; i++) {
-        let result = star2(i, rowSize)
+        let result = invertedTriangleStar(i, rowSize)
         console.log(result);
     }
 }
 
-invertedTriangle(5)
-
-function star3(i) {
+function leftAlignedTriangleStar(i) {
     rowContent = "";
     symb = "*"
     for (let j = 0; j <= i; j++) {
@@ -46,19 +42,18 @@ function star3(i) {
     }
     return rowContent;
 }
+
 function leftAlignedTriangle(count) {
     console.log(`Left-Aligned Triangle - ${count}`);
 
     for (let i = 0; i < count; i++) {
         rowContent = "";
-        let result = star3(i, count)
+        let result = leftAlignedTriangleStar(i, count)
         console.log(result);
     }
 }
 
-leftAlignedTriangle(5)
-
-function star4(i, count) {
+function pyramidStar(i, count) {
     save = "";
     symb = "*";
     for (let j = 0; j < count + i; j++) {
@@ -74,55 +69,119 @@ function star4(i, count) {
 function pyramid(count) {
     console.log(`Pyramid - ${count}`)
     for (let i = 0; i < count; i++) {
-        let result = star4(i, count);
+        let result = pyramidStar(i, count);
         console.log(result);
     }
 }
-
-pyramid(5)
-
 function star5(i, count) {
 
 }
 
-function diamond(count) {
-    console.log(`Diamond - ${count}`);
-    rowContent = "";
-    gap = " ";
-    symb = "*"
-    for (let i = 1; i <= count; i++) {
-        rowContent = "";
-        for (let j = 0; j <= count - i; j++) {
-            rowContent = rowContent + gap;
-        }
-        for (let k = 1; k <= i; k++) {
-            if (k === 1) {
-                rowContent = rowContent + symb;
-            }
-            else {
-                rowContent = rowContent + symb + symb;
-            }
-        }
-        console.log(rowContent);
+function diamond1(count) {
+    let rowContent = "";
+    let gap = " ";
+    let symb = "*";
+    for (let j = 0; j < count - 1; j++) {
+        rowContent = rowContent + gap;
     }
-    for (let i = 1; i <= count; i++) {
-        rowContent = "";
-        for (let j = 0; j <= i; j++) {
-            rowContent = rowContent + gap;
-        }
-        for (let k = 1; k <= count - i; k++) {
-            if (k === 1) {
-                rowContent = rowContent + symb;
-            }
-            else {
-                rowContent = rowContent + symb + symb;
-            }
-        }
-        console.log(rowContent);
+    for (let k = 0; k < 1; k++) {
+        rowContent = rowContent + symb;
     }
+    console.log(rowContent);
 }
 
-diamond(5)
+
+function diamond2(gapCount, starCount){
+    let rowContent = "";
+    let symb1 = " ";
+    let symb2 = "*";
+    for(let i = 0; i < gapCount; i++){
+        rowContent = rowContent + symb1;
+    }
+    for(let j = 0; j < starCount; j++){
+        rowContent = rowContent + symb2;
+    }
+    console.log(rowContent)
+}
+
+function diamond3(rowNumber, diamondSize){
+    let gapCount = ((rowNumber - diamondSize)+ 1);
+    if(gapCount > 0){
+        gapCount = gapCount
+    }
+    else{
+        gapCount = ((diamondSize - rowNumber)+ 1)
+    }
+    let starCount = diamondSize - rowNumber;
+    if(starCount > 0){
+        starCount = ((rowNumber *2)-1);
+    }
+    else {
+        let result1 = (rowNumber - diamondSize);
+        let result2 = ((diamondSize * 2)-1);
+        let result3 = (result1 * 2);
+        starCount = result2 - result3;
+    }
+    let save = diamond2(gapCount, starCount);
+    // console.log(gapCount, starCount);
+}
+
+// diamond3(9,7)
+// diamond3(5,7)
+// diamond3(1,7)
+// diamond3(7,7)
+
+let diamondSize = 5;
+for(let i = 0; i <= diamondSize * 2; i++){
+    let save = diamond3(i,diamondSize)
+}
+
+function firsthalf(i, count) {
+    rowContent = "";
+    gap = "-";
+    symb = "*"
+    for (let j = 0; j <= count - i; j++) {
+        rowContent = rowContent + gap;
+    }
+    for (let k = 1; k <= i; k++) {
+        if (k === 1) {
+            rowContent = rowContent + symb;
+        }
+        else {
+            rowContent = rowContent + symb + symb;
+        }
+    }
+    return rowContent
+}
+
+function secondhalf(i, count) {
+    for (let j = 0; j <= i; j++) {
+        rowContent = rowContent + gap;
+    }
+    for (let k = 1; k <= count - i; k++) {
+        if (k === 1) {
+            rowContent = rowContent + symb;
+        }
+        else {
+            rowContent = rowContent + symb + symb;
+        }
+    }
+    return rowContent
+}
+
+function diamond(count) {
+    console.log(`Diamond - ${count}`);
+    for (let i = 1; i <= count; i++) {
+        rowContent = "";
+        let save = firsthalf(i, count)
+        console.log(save);
+    }
+    for (let i = 1; i <= count; i++) {
+        rowContent = "";
+        let result = secondhalf(i, count)
+        console.log(result);
+    }
+}
 
 function square(i, count) {
     let index = "";
@@ -144,6 +203,7 @@ function square(i, count) {
     }
     return index
 }
+
 function hollowSquare(count) {
     console.log(`Hollow Square - ${count}`);
     for (let i = 1; i <= count; i++) {
@@ -152,8 +212,6 @@ function hollowSquare(count) {
         console.log(result);
     }
 }
-
-hollowSquare(5)
 
 function board(i, count) {
     let symb = "*";
@@ -177,8 +235,6 @@ function checkerBoard(count) {
     }
 }
 
-checkerBoard(4)
-
 function numeric(i) {
     rowcontent = "";
     for (j = 1; j <= i; j++) {
@@ -186,6 +242,7 @@ function numeric(i) {
     }
     return rowcontent
 }
+
 function leftAlignedNumericTriangle(count) {
     console.log(`Left Aligned Numeric Triangle - ${count}`)
     for (i = 1; i <= count; i++) {
@@ -194,9 +251,6 @@ function leftAlignedNumericTriangle(count) {
         console.log(result);
     }
 }
-
-leftAlignedNumericTriangle(5)
-
 
 function symbolic(i, start) {
     rowcontent = "";
@@ -220,9 +274,7 @@ function floydsTriangle(count) {
     }
 }
 
-floydsTriangle(5)
-
-function star6(i, numRows) {
+function pascalsTriangleStar(i, numRows) {
     let rowContent = "";
     let num = 1;
     for (let j = 0; j < numRows - i - 1; j++) {
@@ -234,14 +286,38 @@ function star6(i, numRows) {
     }
     return rowContent
 }
+
 function pascalsTriangle(numRows) {
 
     console.log(`Pascal’s Triangle - ${numRows}`);
     for (let i = 0; i < numRows; i++) {
-        let save = star6(i, numRows)
+        let save = pascalsTriangleStar(i, numRows)
         console.log(save);
     }
 }
 
-pascalsTriangle(5)
+// rightAlignedTriangle(5);
 
+// invertedTriangle(5)
+
+// leftAlignedTriangle(5)
+
+// pyramid(5)
+
+// diamond1(5)
+
+// diamond(5)
+
+// hollowSquare(5)
+
+// checkerBoard(4)
+
+// leftAlignedNumericTriangle(5)
+
+// floydsTriangle(5)
+
+// pascalsTriangle(5)
+
+// diamond2(3,5)
+
+// diamond3(5, 5)
