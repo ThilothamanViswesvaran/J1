@@ -8,7 +8,7 @@ function generateGapsAndStar(gapCount, starCount){
     for(let j = 0; j < starCount; j++){
         rowContent = rowContent + symb2;
     }
-    console.log(rowContent)
+    return rowContent;
 }
 
 function generateRowsAndStars(rowNumber, diamondSize){
@@ -29,7 +29,7 @@ function generateRowsAndStars(rowNumber, diamondSize){
         let result3 = (result1 * 2);
         starCount = result2 - result3;
     }
-    let save = generateGapsAndStar(gapCount, starCount);
+    console.log(generateGapsAndStar(gapCount, starCount));
     // console.log(gapCount, starCount);
 }
 
@@ -38,9 +38,9 @@ function generateRowsAndStars(rowNumber, diamondSize){
 // generateRowsAndStars(1,7)
 // generateRowsAndStars(7,7)
 
-function generateDiamond(diamondSize)
+function generateDiamond(diamondSize){
 for(let i = 0; i <= diamondSize * 2; i++){
-    let save = generateRowsAndStars(i,diamondSize)
+    generateRowsAndStars(i,diamondSize)
 }
-
+}
 generateDiamond(5);
