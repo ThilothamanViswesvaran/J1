@@ -39,7 +39,7 @@ function generateRowsAndStars(rowNumber, diamondSize){
 // generateRowsAndStars(7,7)
 
 function generateDiamond(diamondSize){
-for(let i = 0; i <= diamondSize * 2; i++){
+for(let i = 1; i <= diamondSize * 2 - 1; i++){
     generateRowsAndStars(i,diamondSize)
 }
 }
