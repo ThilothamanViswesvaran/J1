@@ -43,4 +43,4 @@ for(let i = 1; i <= diamondSize * 2 - 1; i++){
     generateRowsAndStars(i,diamondSize)
 }
 }
-generateDiamond(5);
+generateDiamond(9);
