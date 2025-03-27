@@ -27,16 +27,10 @@ if ("school" in student) {
     console.log("No");
 }
 
-let keys = ["name", "age", "school"];
+const keys = Object.keys(student);
 
 for (let i = 0; i < keys.length; i++) {
-    if (keys[i] === "name") {
-        console.log("name: " + student.name);
-    } else if (keys[i] === "age") {
-        console.log("age: " + student.age);
-    } else if (keys[i] === "school") {
-        console.log("school: " + student.school);
-    }
+    console.log(keys[i] + ": " + student[keys[i]]);
 }
 
 let students = [
